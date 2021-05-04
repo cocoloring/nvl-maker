@@ -1,7 +1,4 @@
 {
-    "cSpell.words": [
-        "Galgame",
-        "cocoloring",
-        "webgl"
-    ]
+    "cSpell.words": ["Galgame", "cocoloring", "webgl"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

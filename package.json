@@ -3,6 +3,9 @@
     "version": "0.0.0",
     "private": true,
     "license": "MIT",
+    "workspaces": [
+        "packages/*"
+    ],
     "devDependencies": {
         "commitizen": "^4.2.3",
         "conventional-changelog": "^3.1.24",

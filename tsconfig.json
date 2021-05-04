@@ -1,32 +1,28 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": [
-      "dom",
-      "es2017",
-      "es2019.object"
-    ],
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    "composite": true,
-    "isolatedModules": true,
-    "importsNotUsedAsValues": "error",
-    // some strict rules
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "esModuleInterop": false,
-    "resolveJsonModule": true
-  },
-  "exclude": [
-    ".yarn/releases/*",
-    "**/__tests__/**/*",
-    "**/__mocks__/**/*",
-    "**/build/**/*"
-  ]
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": ["dom", "es2017", "es2019.object"],
+        "sourceMap": true,
+        "declaration": true,
+        "declarationMap": true,
+        "composite": true,
+        "isolatedModules": true,
+        "importsNotUsedAsValues": "error",
+        // some strict rules
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "esModuleInterop": false,
+        "resolveJsonModule": true
+    },
+    "exclude": [
+        ".yarn/releases/*",
+        "**/__tests__/**/*",
+        "**/__mocks__/**/*",
+        "**/build/**/*"
+    ]
 }

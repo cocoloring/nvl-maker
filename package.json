@@ -6,7 +6,9 @@
     "devDependencies": {
         "commitizen": "^4.2.3",
         "conventional-changelog": "^3.1.24",
-        "conventional-changelog-cli": "^2.1.1"
+        "conventional-changelog-cli": "^2.1.1",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.4"
     },
     "config": {
         "commitizen": {
@@ -14,6 +16,6 @@
         }
     },
     "scripts": {
-        "commit": "yarn git-cz"
+        "commit": "git cz"
     }
 }

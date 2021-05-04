@@ -2,5 +2,18 @@
     "name": "nvl-maker",
     "version": "0.0.0",
     "private": true,
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "commitizen": "^4.2.3",
+        "conventional-changelog": "^3.1.24",
+        "conventional-changelog-cli": "^2.1.1"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "scripts": {
+        "commit": "yarn git-cz"
+    }
 }

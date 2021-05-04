@@ -1,4 +1,7 @@
 {
     "cSpell.words": ["Galgame", "cocoloring", "webgl"],
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "code-runner.executorMap": {
+        "typescript": "node --no-warnings --loader ts-node/esm"
+    }
 }

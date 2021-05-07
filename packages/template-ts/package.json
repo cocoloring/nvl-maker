@@ -9,6 +9,7 @@
     "author": "cocoloring <cocoloring@outlook.com>",
     "license": "MIT",
     "type": "module",
+    "main": "build/main.js",
     "module": "build/main.js",
     "types": "build/main.d.ts",
     "scripts": {

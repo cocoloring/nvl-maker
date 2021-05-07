@@ -1,3 +1,5 @@
-export class NVLMaker {}
+import Utils from '@nvl-maker/utils'
 
-console.log('hello, world')
+export default class NVLMaker {
+    static Utils = Utils
+}

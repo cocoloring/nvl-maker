@@ -26,5 +26,8 @@
         "build:ts": "yarn tsc -p ./tsconfig.json",
         "clean": "yarn clean:ts",
         "clean:ts": "yarn rimraf node_modules"
+    },
+    "dependencies": {
+        "@nvl-maker/utils": "^0.0.1"
     }
 }

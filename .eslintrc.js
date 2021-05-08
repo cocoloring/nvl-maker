@@ -1,8 +1,19 @@
 module.exports = {
     ignorePatterns: ['**/node_modules', '**/build'],
     plugins: ['prettier'],
-    rules: {
-        'prettier/prettier': 'error',
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+        },
     },
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
+    ignorePatterns: ['**/node_modules', '**/build'],
     extends: ['plugin:prettier/recommended'],
 }

@@ -31,6 +31,9 @@
         "postinstall": "yarn lerna bootstrap --npm-client yarn --use-workspaces",
         "clean": "yarn workspaces run clean && lerna clean -y",
         "build": "yarn lerna run --stream --sort build",
-        "commit": "git cz"
+        "commit": "yarn commit:pre && git-cz",
+        "commit:pre": "yarn lint:fix",
+        "lint": "yarn eslint \"**/*.{js,ts,tsx}\"",
+        "lint:fix": "yarn lint --fix"
     }
 }

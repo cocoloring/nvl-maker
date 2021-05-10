@@ -1,6 +1,7 @@
 module.exports = {
+    root: true,
     ignorePatterns: ['**/node_modules', '**/build'],
-    plugins: ['prettier'],
+    plugins: ['prettier', '@typescript-eslint'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2020,
@@ -15,5 +16,11 @@ module.exports = {
         },
     },
     ignorePatterns: ['**/node_modules', '**/build'],
-    extends: ['plugin:prettier/recommended'],
+    extends: [
+        'plugin:prettier/recommended',
+        'plugin:@typescript-eslint/recommended',
+    ],
+    rules: {
+        '@typescript-eslint/explicit-function-return-type': ['error'],
+    },
 }

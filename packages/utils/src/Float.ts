@@ -1,6 +1,7 @@
-export default class Number {
-    static E = new Number(Math.E)
-    static Pi = new Number(Math.PI)
+export default class Float {
+    static E = new Float(Math.E)
+    static Pi = new Float(Math.PI)
+
 
     protected data: number
 
@@ -16,27 +17,27 @@ export default class Number {
         this.data = value
     }
 
-    plus(n: Number): this {
+    plus(n: Float): this {
         this.value += n.value
         return this
     }
 
-    minus(n: Number): this {
+    minus(n: Float): this {
         this.value -= n.value
         return this
     }
 
-    times(n: Number): this {
+    times(n: Float): this {
         this.value *= n.value
         return this
     }
 
-    divides(n: Number): this {
+    divides(n: Float): this {
         this.value = n.value / this.value
         return this
     }
 
-    dividedBy(n: Number): this {
+    dividedBy(n: Float): this {
         this.value /= n.value
         return this
     }
@@ -46,12 +47,12 @@ export default class Number {
         return this
     }
 
-    power(n: Number): this {
+    power(n: Float): this {
         this.value = this.value ** n.value
         return this
     }
 
-    root(n: Number): this {
+    root(n: Float): this {
         this.value = this.value ** 1 / n.value
         return this
     }
@@ -76,9 +77,9 @@ export default class Number {
         return this
     }
 
-    log(n: Number = Number.E): this {
+    log(n: Float = Float.E): this {
         this.value = Math.log(this.value)
-        if (n !== Number.E) {
+        if (n !== Float.E) {
             this.value = this.value / Math.log(n.value)
         }
         return this
@@ -92,7 +93,7 @@ export default class Number {
         return String(this.value)
     }
 
-    clone(): Number {
-        return new Number(this.value)
+    clone(): Float {
+        return new Float(this.value)
     }
 }

@@ -1,5 +1,5 @@
 export default class DefaultPackage {
-    defaultMethod() {
+    defaultMethod(): void {
         console.log('hello, world')
     }
 }

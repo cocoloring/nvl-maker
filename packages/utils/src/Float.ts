@@ -1,3 +1,5 @@
+import FormatError from './FormatError'
+
 export default class Float {
     static E = new Float(Math.E)
     static Pi = new Float(Math.PI)
@@ -9,14 +11,14 @@ export default class Float {
     static fromString(n: string | string): Float {
         const ref = +n
         if (isNaN(ref)) {
-            throw new TypeError('')
+            throw new FormatError('BadString')
         }
         return new Float(+n)
     }
 
     protected data: number
 
-    constructor(initValue: number = 0) {
+    constructor(initValue = 0) {
         this.data = initValue
     }
 

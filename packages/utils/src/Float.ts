@@ -12,8 +12,9 @@ export default class Float {
         const ref = +n
         if (isNaN(ref)) {
             throw new FormatError('BadString')
+        } else {
+            return new Float(ref)
         }
-        return new Float(+n)
     }
 
     protected data: number

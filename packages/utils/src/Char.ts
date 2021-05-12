@@ -15,6 +15,11 @@ export default class Char {
         this.data = this.formatData(value)
     }
 
+    get length(): number {
+        // how many bites
+        return Math.floor(Math.log(this.data) / Math.log(0x100))
+    }
+
     protected formatData(data: number): number {
         // TODO: should as a methods of Float
         return Math.floor(Math.max(0, data))

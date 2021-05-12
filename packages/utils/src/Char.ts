@@ -1,4 +1,6 @@
 import Float from './Float'
+import FormatError from './FormatError'
+import Vector2 from './Vector2'
 
 export default class Char {
     protected data: number

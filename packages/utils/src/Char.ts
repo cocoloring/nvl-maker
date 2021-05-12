@@ -53,4 +53,29 @@ export default class Char {
     clone(): Char {
         return new Char(this.value)
     }
+
+    protected measureTextCanvas?: HTMLCanvasElement
+
+    // TODO: need give it a setter
+    protected fontName = '10px sans-serif'
+
+    get displaySize(): Vector2 {
+        // TODO: make it run on nodejs
+        // TODO: need buffer it, bad performance
+        if (this.measureTextCanvas === undefined)
+            this.measureTextCanvas = document.createElement('canvas')
+        const canvas: HTMLCanvasElement = this.measureTextCanvas
+        const context2D = canvas.getContext('2d')
+        if (context2D === null) throw new FormatError('BadCanvasContext2D')
+        context2D.font = this.fontName
+        const {
+            width,
+            fontBoundingBoxAscent,
+            fontBoundingBoxDescent,
+        } = context2D.measureText(this.toString())
+        return new Vector2(
+            width,
+            fontBoundingBoxAscent + fontBoundingBoxDescent,
+        )
+    }
 }

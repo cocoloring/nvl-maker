@@ -67,7 +67,7 @@ export default class Float {
     }
 
     root(n: Float): this {
-        this.value = this.value ** 1 / n.value
+        this.value = this.value ** (1 / n.value)
         return this
     }
 

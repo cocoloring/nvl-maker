@@ -1,5 +1,6 @@
 enum ErrorText {
     BadString = 'string cannot be parsed',
+    BadCanvasContext2D = 'unable to get context 2d from a html canvas element',
 }
 
 export default class FormatError extends Error {

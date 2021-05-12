@@ -47,12 +47,14 @@ export default class Char {
     }
 
     toString(): string {
+        // TODO: should use buffered value
         return String.fromCharCode(
             ...this.splitNumberAsArray(this.value, 0x10000),
         )
     }
 
     clone(): Char {
+        // TODO: maybe copy all buffered values?
         return new Char(this.value)
     }
 

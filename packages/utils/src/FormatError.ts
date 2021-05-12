@@ -5,8 +5,8 @@ enum ErrorText {
 
 export default class FormatError extends Error {
     static ErrorText: typeof ErrorText = ErrorText
-    constructor(text: keyof typeof ErrorText) {
-        const message: string = ErrorText[text]
+    constructor(errorType: keyof typeof ErrorText) {
+        const message: string = ErrorText[errorType]
 
         super(message)
     }

@@ -1,4 +1,4 @@
-import FormatError from './FormatError'
+import FormatError from './FormatError.js'
 
 export default class Float {
     static E = new Float(Math.E)

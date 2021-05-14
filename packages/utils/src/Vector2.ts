@@ -27,4 +27,8 @@ export default class Vector2 {
     toString(): string {
         return this.data.join(',')
     }
+
+    clone(): Vector2 {
+        return new Vector2(...this.data)
+    }
 }

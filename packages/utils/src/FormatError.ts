@@ -14,5 +14,3 @@ export default class FormatError extends Error {
         super(message)
     }
 }
-
-new FormatError('BadString')

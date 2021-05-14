@@ -4,6 +4,7 @@ enum ErrorText {
     NoConstructor = "it's not allowed to create a instances of this class via constructor.",
     BufferedItemRepeatSet = 'BufferedItem can be set once only',
     BufferedItemNotSet = 'BufferedItem must be set first',
+    BufferedItemBadInitFn = 'BufferedItem initFn must return a non-void value',
 }
 
 export default class FormatError extends Error {

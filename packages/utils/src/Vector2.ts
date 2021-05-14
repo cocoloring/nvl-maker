@@ -6,7 +6,7 @@ export default class Vector2 {
     constructor(...condition: [number?, number?]) {
         for (let i = 0; i < condition.length; i++) {
             const element = condition[i]
-            condition[i] = element ?? 0
+            condition[i] = element === undefined ? 0 : element
         }
 
         this.data = condition as Vector2Array

@@ -1,6 +1,7 @@
 import FormatError from './FormatError'
 
 export type BufferedItemInitFn<T> = (name: string) => T
+export type BufferedItemUpdateFn<T> = (name: string, prevValue: T) => T
 
 export type BufferedItemContainer<T> = {
     initFn: BufferedItemInitFn<T>
@@ -11,14 +12,10 @@ export type ObjectBasedMap<T> = {
     [name: string]: T
 }
 
-export default class BufferedItem {
+export default class BufferedItem<T = unknown> {
     protected static data: ObjectBasedMap<
-        BufferedItemContainer<unknown>
+        BufferedItem<unknown>
     > = Object.create(null)
-
-    private constructor() {
-        throw new FormatError('NoConstructor')
-    }
 
     static set<T>(
         name: string,
@@ -26,26 +23,55 @@ export default class BufferedItem {
         force = false,
     ): void {
         if (force || BufferedItem.data[name] === undefined) {
-            BufferedItem.data[name] = {
+            BufferedItem.data[name] = new BufferedItem<T>(
                 initFn,
-                value: undefined,
-            }
+            ) as BufferedItem<unknown>
         } else {
             throw new FormatError('BufferedItemRepeatSet')
         }
     }
 
-    static get<T>(name: string): T {
-        const container = BufferedItem.data[name]
+    static get<T>(name: string, shouldUpdate = false): T {
+        const container = BufferedItem.data[name] as BufferedItem<T>
         if (container) {
             if (container.value === undefined) {
                 container.value = container.initFn(name)
-                return container.value as T
-            } else {
-                return container.value as T
+                if (container.value === undefined) {
+                    throw new FormatError('BufferedItemBadInitFn')
+                }
+            } else if (
+                shouldUpdate &&
+                typeof container.updateFn === 'function'
+            ) {
+                container.value = container.updateFn(name, container.value)
+                if (container.value === undefined) {
+                    // updateFn erased value, so must init again
+                    return BufferedItem.get(name, shouldUpdate)
+                }
             }
+            return container.value
+            } else {
+            throw new FormatError('BufferedItemNotSet')
+            }
+    }
+
+    static setUpdater<T>(
+        name: string,
+        updateFn: BufferedItemUpdateFn<T>,
+    ): void {
+        const container = BufferedItem.data[name] as BufferedItem<T>
+        if (container) {
+            container.updateFn = updateFn
         } else {
-            throw new FormatError('BufferedItemRepeatSet')
+            throw new FormatError('BufferedItemNotSet')
         }
+    }
+
+    protected initFn: BufferedItemInitFn<T>
+    protected updateFn?: BufferedItemUpdateFn<T>
+    protected value?: T = undefined
+
+    protected constructor(initFn: BufferedItemInitFn<T>) {
+        this.initFn = initFn
     }
 }

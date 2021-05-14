@@ -1,6 +1,35 @@
-import Float from './Float'
-import FormatError from './FormatError'
-import Vector2 from './Vector2'
+import * as canvas from 'canvas'
+import BufferedItem from './BufferedItem.js'
+import Float from './Float.js'
+import FormatError from './FormatError.js'
+import Vector2 from './Vector2.js'
+
+/* --------
+    there a difference between resolving of d.ts and resolving of nodejs
+    what d.ts says:
+        canvas.createCanvas
+    nodejs:
+        canvas.default.createCanvas
+
+    TODO: need a better way to solve this issue
+-------- */
+import type { createCanvas } from 'canvas'
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Canvas: typeof createCanvas = (canvas as any).default.createCanvas
+
+const bufferName = {
+    canvas: 'char_canvas_for_char_measure',
+} as const
+
+BufferedItem.set(bufferName.canvas, () => {
+    let canvas: unknown
+    if (typeof window === 'object') {
+        canvas = document.createElement('canvas')
+    } else {
+        canvas = Canvas(200, 200)
+    }
+    return canvas as HTMLCanvasElement
+})
 
 export default class Char {
     protected data: number
@@ -14,7 +43,11 @@ export default class Char {
     }
 
     set value(value: number) {
-        this.data = this.formatData(value)
+        const ref = this.formatData(value)
+        if (this.data !== ref) {
+            this.isValueChanged = true
+            this.data = ref
+        }
     }
 
     get length(): number {
@@ -46,40 +79,53 @@ export default class Char {
         return values
     }
 
-    toString(): string {
-        // TODO: should use buffered value
-        return String.fromCharCode(
+    protected bufferString = ''
+
+    protected calcString(): void {
+        this.bufferString = String.fromCharCode(
             ...this.splitNumberAsArray(this.value, 0x10000),
         )
     }
 
-    clone(): Char {
-        // TODO: maybe copy all buffered values?
-        return new Char(this.value)
+    toString(): string {
+        if (this.isValueChanged) this.calcString()
+        return this.bufferString
     }
 
-    protected measureTextCanvas?: HTMLCanvasElement
+    clone(): Char {
+        // TODO: maybe copy all buffered values?
+        const c = new Char(this.value)
+        c.bufferedDisplaySize = this.bufferedDisplaySize.clone()
+        c.isValueChanged = this.isValueChanged
+        return c
+    }
 
     // TODO: need give it a setter
     protected fontName = '10px sans-serif'
 
-    get displaySize(): Vector2 {
-        // TODO: make it run on nodejs
-        // TODO: need buffer it, bad performance
-        if (this.measureTextCanvas === undefined)
-            this.measureTextCanvas = document.createElement('canvas')
-        const canvas: HTMLCanvasElement = this.measureTextCanvas
+    protected isValueChanged = true
+
+    protected calcDisplaySize(): void {
+        const canvas = BufferedItem.get<HTMLCanvasElement>(bufferName.canvas)
         const context2D = canvas.getContext('2d')
         if (context2D === null) throw new FormatError('BadCanvasContext2D')
         context2D.font = this.fontName
         const {
             width,
-            fontBoundingBoxAscent,
-            fontBoundingBoxDescent,
+            actualBoundingBoxAscent,
+            actualBoundingBoxDescent,
         } = context2D.measureText(this.toString())
-        return new Vector2(
+        console.log(context2D.measureText(this.toString()))
+        this.bufferedDisplaySize.value = [
             width,
-            fontBoundingBoxAscent + fontBoundingBoxDescent,
-        )
+            actualBoundingBoxAscent + actualBoundingBoxDescent,
+        ]
+    }
+
+    protected bufferedDisplaySize: Vector2 = new Vector2()
+
+    get displaySize(): Vector2 {
+        if (this.isValueChanged) this.calcDisplaySize()
+        return this.bufferedDisplaySize
     }
 }

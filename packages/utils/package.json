@@ -17,5 +17,8 @@
         "build:ts": "yarn tsc -p ./tsconfig.json",
         "clean": "yarn clean:ts",
         "clean:ts": "yarn rimraf node_modules"
+    },
+    "dependencies": {
+        "canvas": "^2.7.0"
     }
 }

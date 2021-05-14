@@ -50,9 +50,9 @@ export default class BufferedItem<T = unknown> {
                 }
             }
             return container.value
-            } else {
+        } else {
             throw new FormatError('BufferedItemNotSet')
-            }
+        }
     }
 
     static setUpdater<T>(

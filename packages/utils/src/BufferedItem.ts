@@ -1,4 +1,4 @@
-import FormatError from './FormatError'
+import FormatError from './FormatError.js'
 
 export type BufferedItemInitFn<T> = (name: string) => T
 export type BufferedItemUpdateFn<T> = (name: string, prevValue: T) => T

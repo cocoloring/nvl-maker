@@ -4,11 +4,11 @@ export default class Float {
     static E = new Float(Math.E)
     static Pi = new Float(Math.PI)
 
-    static fromNumber(n: number | number): Float {
+    static fromNumber(n: number): Float {
         return new Float(+n)
     }
 
-    static fromString(n: string | string): Float {
+    static fromString(n: string): Float {
         const ref = +n
         if (isNaN(ref)) {
             throw new FormatError('BadString')

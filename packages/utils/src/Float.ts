@@ -1,6 +1,7 @@
+import type { AdditionalNumericArithmetic } from './BasicArithmetic.js'
 import FormatError from './FormatError.js'
 
-export default class Float {
+export default class Float implements AdditionalNumericArithmetic<Float> {
     static E = new Float(Math.E)
     static Pi = new Float(Math.PI)
 

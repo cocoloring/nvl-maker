@@ -1,6 +1,7 @@
+import type { ElementaryArithmetic } from './BasicArithmetic.js'
 import FormatError from './FormatError.js'
 
-export default class Integer {
+export default class Integer implements ElementaryArithmetic<Integer> {
     static fromNumber(n: number): Integer {
         return new Integer(+n)
     }

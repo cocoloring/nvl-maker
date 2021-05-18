@@ -14,6 +14,7 @@ import Vector2 from './Vector2.js'
     TODO: need a better way to solve this issue
 -------- */
 import type { createCanvas } from 'canvas'
+import type { BasicObject } from './BasicType.js'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Canvas: typeof createCanvas = (canvas as any).default.createCanvas
 
@@ -31,7 +32,7 @@ BufferedItem.set(bufferName.canvas, () => {
     return canvas as HTMLCanvasElement
 })
 
-export default class Char {
+export default class Char implements BasicObject<Char> {
     protected data: number
 
     constructor(initCharCode = 0x20) {

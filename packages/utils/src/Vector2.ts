@@ -1,6 +1,8 @@
+import type { BasicObject } from './BasicType'
+
 export type Vector2Array = [number, number]
 
-export default class Vector2 {
+export default class Vector2 implements BasicObject<Vector2> {
     protected data: Vector2Array
 
     constructor(...condition: [number?, number?]) {

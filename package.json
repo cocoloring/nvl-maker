@@ -29,7 +29,7 @@
         }
     },
     "scripts": {
-        "postinstall": "yarn lerna bootstrap --npm-client yarn --use-workspaces",
+        "postinstall": "yarn lerna bootstrap --npm-client yarn --use-workspaces && yarn lint:fix",
         "clean": "yarn workspaces run clean && lerna clean -y",
         "build": "yarn lerna run --stream --sort build",
         "commit": "yarn commit:pre && git-cz",

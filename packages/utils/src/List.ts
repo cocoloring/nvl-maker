@@ -61,8 +61,8 @@ export default class List<T> implements BasicObject<List<T>>, Iterable<T> {
         return List.fromIterable(this.data)
     }
 
-    toString(): string {
-        return this.data.map((item) => String(item)).join(',')
+    toString(separator = ','): string {
+        return this.data.map((item) => String(item)).join(separator)
     }
 
     valueOf(): number {

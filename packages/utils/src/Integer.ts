@@ -1,5 +1,5 @@
-import type { ElementaryArithmetic } from './BasicArithmetic.js'
-import type { BasicObject } from './BasicType.js'
+import type { ElementaryArithmetic } from './BasicArithmetic'
+import type { BasicObject } from './BasicType'
 import FormatError from './FormatError.js'
 
 export default class Integer

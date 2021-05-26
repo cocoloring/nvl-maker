@@ -1,5 +1,5 @@
-import type { AdditionalNumericArithmetic } from './BasicArithmetic.js'
-import type { BasicObject } from './BasicType.js'
+import type { AdditionalNumericArithmetic } from './BasicArithmetic'
+import type { BasicObject } from './BasicType'
 import FormatError from './FormatError.js'
 
 export default class Float

@@ -15,6 +15,7 @@ import Vector2 from './Vector2.js'
 -------- */
 import type { createCanvas } from 'canvas'
 import type { BasicObject } from './BasicType.js'
+import Integer from './Integer.js'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Canvas: typeof createCanvas = (canvas as any).default.createCanvas
 
@@ -32,15 +33,10 @@ BufferedItem.set(bufferName.canvas, () => {
     return canvas as HTMLCanvasElement
 })
 
-export default class Char implements BasicObject<Char> {
-    protected data: number
-
+export default class Char extends Integer implements BasicObject<Char> {
     constructor(initCharCode = 0x20) {
+        super()
         this.data = this.formatData(initCharCode)
-    }
-
-    get value(): number {
-        return this.data
     }
 
     set value(value: number) {
@@ -63,10 +59,6 @@ export default class Char implements BasicObject<Char> {
 
     toFloat(): Float {
         return new Float(this.value)
-    }
-
-    valueOf(): number {
-        return this.value
     }
 
     protected splitNumberAsArray(valueTotal: number, valueMax = 10): number[] {

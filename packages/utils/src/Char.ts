@@ -1,8 +1,11 @@
+import type { createCanvas } from 'canvas'
+import type { BasicObject } from './BasicType'
 import * as canvas from 'canvas'
 import BufferedItem from './BufferedItem.js'
 import Float from './Float.js'
 import FormatError from './FormatError.js'
 import Vector2 from './Vector2.js'
+import Integer from './Integer.js'
 
 /* --------
     there a difference between resolving of d.ts and resolving of nodejs
@@ -13,9 +16,6 @@ import Vector2 from './Vector2.js'
 
     TODO: need a better way to solve this issue
 -------- */
-import type { createCanvas } from 'canvas'
-import type { BasicObject } from './BasicType.js'
-import Integer from './Integer.js'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Canvas: typeof createCanvas = (canvas as any).default.createCanvas
 

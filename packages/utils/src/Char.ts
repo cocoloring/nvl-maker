@@ -1,23 +1,11 @@
-import type { createCanvas } from 'canvas'
 import type { BasicObject } from './BasicType'
-import * as canvas from 'canvas'
-import BufferedItem from './BufferedItem.js'
-import Float from './Float.js'
-import FormatError from './FormatError.js'
-import Vector2 from './Vector2.js'
-import Integer from './Integer.js'
+import BufferedItem from './BufferedItem'
+import Float from './Float'
+import FormatError from './FormatError'
+import Vector2 from './Vector2'
+import Integer from './Integer'
 
-/* --------
-    there a difference between resolving of d.ts and resolving of nodejs
-    what d.ts says:
-        canvas.createCanvas
-    nodejs:
-        canvas.default.createCanvas
-
-    TODO: need a better way to solve this issue
--------- */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Canvas: typeof createCanvas = (canvas as any).default.createCanvas
+import { createCanvas } from 'canvas'
 
 const bufferName = {
     canvas: 'char_canvas_for_char_measure',
@@ -28,7 +16,7 @@ BufferedItem.set(bufferName.canvas, () => {
     if (typeof window === 'object') {
         canvas = document.createElement('canvas')
     } else {
-        canvas = Canvas(200, 200)
+        canvas = createCanvas(200, 200)
     }
     return canvas as HTMLCanvasElement
 })

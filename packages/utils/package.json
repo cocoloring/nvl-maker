@@ -8,9 +8,7 @@
     ],
     "author": "cocoloring <cocoloring@outlook.com>",
     "license": "MIT",
-    "type": "module",
     "main": "build/main.js",
-    "module": "build/main.js",
     "types": "build/main.d.ts",
     "scripts": {
         "build": "yarn npm-run-all build:ts",
@@ -20,5 +18,8 @@
     },
     "dependencies": {
         "canvas": "^2.7.0"
+    },
+    "devDependencies": {
+        "@types/node": "^15.12.0"
     }
 }

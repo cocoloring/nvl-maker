@@ -1,6 +1,6 @@
 import type { ElementaryArithmetic } from './BasicArithmetic'
 import type { BasicObject } from './BasicType'
-import FormatError from './FormatError.js'
+import FormatError from './FormatError'
 
 export default class Integer
     implements BasicObject<Integer>, ElementaryArithmetic<Integer> {

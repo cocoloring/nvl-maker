@@ -1,6 +1,6 @@
 import type { BasicObject } from './BasicType'
-import Char from './Char.js'
-import List from './List.js'
+import Char from './Char'
+import List from './List'
 
 export default class Text
     extends List<Char>

@@ -1,4 +1,4 @@
-import type { BasicObject } from './BasicType.js'
+import type { BasicObject } from './BasicType'
 
 export type Vector2Array = [number, number]
 

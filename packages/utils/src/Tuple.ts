@@ -1,4 +1,4 @@
-import type { BasicObject } from './BasicType.js'
+import type { BasicObject } from './BasicType'
 
 export default class Tuple<T> implements BasicObject<Tuple<T>>, Iterable<T> {
     static fromIterable<T>(iter: Iterable<T>): Tuple<T> {

@@ -7,6 +7,7 @@ import List from './List'
 import Tuple from './Tuple'
 import FormatError from './FormatError'
 import Text from './Text'
+import Moment from './Moment'
 
 const Utils = {
     // basic value type
@@ -24,6 +25,9 @@ const Utils = {
 
     // utils functions
     BufferedItem,
+
+    // time
+    Moment,
 
     // error
     FormatError,

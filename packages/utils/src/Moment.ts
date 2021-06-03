@@ -36,6 +36,14 @@ export default class Moment implements BasicObject<Moment> {
 
     protected data: bigint
 
+    get value(): bigint {
+        return this.data
+    }
+
+    set value(value: bigint) {
+        this.data = value
+    }
+
     constructor(moment?: bigint) {
         this.data = moment ?? now()
     }

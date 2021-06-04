@@ -8,6 +8,7 @@ import Tuple from './Tuple'
 import FormatError from './FormatError'
 import Text from './Text'
 import Moment from './Moment'
+import Timer from './Timer'
 
 const Utils = {
     // basic value type
@@ -28,6 +29,7 @@ const Utils = {
 
     // time
     Moment,
+    Timer,
 
     // error
     FormatError,

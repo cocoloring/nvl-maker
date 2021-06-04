@@ -33,6 +33,7 @@
         "clean": "yarn workspaces run clean && lerna clean -y",
         "build": "yarn lerna run --stream --sort build",
         "commit": "yarn commit:pre && git-cz",
+        "pull": "git pull && yarn lint:fix",
         "commit:pre": "yarn lint:fix",
         "lint": "yarn eslint \"**/*.{js,ts,tsx}\"",
         "lint:fix": "yarn lint --fix"

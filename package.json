@@ -31,11 +31,11 @@
     "scripts": {
         "postinstall": "yarn lerna bootstrap --npm-client yarn --use-workspaces && yarn lint:fix",
         "clean": "yarn workspaces run clean && lerna clean -y",
-        "build": "yarn lerna run --stream --sort build",
+        "build": "lerna run --stream --sort build",
         "commit": "yarn commit:pre && git-cz",
         "pull": "git pull && yarn lint:fix",
         "commit:pre": "yarn lint:fix",
-        "lint": "yarn eslint \"**/*.{js,ts,tsx}\"",
+        "lint": "eslint \"**/*.{js,ts,tsx}\"",
         "lint:fix": "yarn lint --fix"
     }
 }

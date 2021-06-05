@@ -1,4 +1,5 @@
 import type { BasicObject } from './BasicType'
+import FormatError from './FormatError'
 
 export default class Tuple<T> implements BasicObject<Tuple<T>>, Iterable<T> {
     static fromIterable<T>(iter: Iterable<T>): Tuple<T> {
@@ -18,8 +19,7 @@ export default class Tuple<T> implements BasicObject<Tuple<T>>, Iterable<T> {
         if (position > 0 && position < this.length) {
             this.data[position] = item
         } else {
-            // TODO: costume error
-            throw new Error('Range Error')
+            throw new FormatError('InvalidIndexRange')
         }
         return this
     }
@@ -28,8 +28,7 @@ export default class Tuple<T> implements BasicObject<Tuple<T>>, Iterable<T> {
         if (position > 0 && position < this.length) {
             return this.data[position]
         } else {
-            // TODO: costume error
-            throw new Error('Range Error')
+            throw new FormatError('InvalidIndexRange')
         }
     }
 

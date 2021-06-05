@@ -7,6 +7,7 @@ enum ErrorText {
     BufferedItemRepeatSet = 'BufferedItem can be set once only',
     BufferedItemNotSet = 'BufferedItem must be set first',
     BufferedItemBadInitFn = 'BufferedItem initFn must return a non-void value',
+    InvalidIndexRange = 'Invalid index range of list-like object',
 }
 
 export default class FormatError

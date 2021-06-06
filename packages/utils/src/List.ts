@@ -77,4 +77,16 @@ export default class List<T> implements BasicObject<List<T>>, Iterable<T> {
     valueOf(): number {
         return this.data.length
     }
+
+    map<R>(mappingFn: (item: T, index: number, list: this) => R): List<R> {
+        const newList = new List<R>()
+
+        for (let i = 0; i < this.length; i++) {
+            const item = this.get(i)
+            if (item === undefined) continue
+            newList.set(i, mappingFn(item, i, this))
+        }
+
+        return newList
+    }
 }

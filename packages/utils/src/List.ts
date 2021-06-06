@@ -17,6 +17,15 @@ export default class List<T> implements BasicObject<List<T>>, Iterable<T> {
         return this.data.length
     }
 
+    get(position: number): T | undefined {
+        return this.data[position]
+    }
+
+    set(position: number, value: T): this {
+        this.data[position] = value
+        return this
+    }
+
     add(item: T, position: number = this.data.length - 1): this {
         const lastPosition = this.data.length - 1
 

@@ -62,7 +62,7 @@ export const Signum = {
     Negative: -1,
     Greater: 1,
     Same: 0,
-    Position: 1,
+    Positive: 1,
     Less: -1,
 } as const
 

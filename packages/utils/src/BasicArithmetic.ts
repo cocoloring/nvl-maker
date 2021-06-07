@@ -46,30 +46,17 @@ export interface AdditionalNumericArithmetic<T> extends NumericArithmetic<T> {
     cubeRoot(): this
     root(value: T): this
 }
-
-export const ComparisonResult = {
-    Same: true,
-    Different: false,
-}
-
-export type ComparisonResult = typeof ComparisonResult[keyof typeof ComparisonResult]
-
 export interface Comparable<T> {
-    compare(value: T): ComparisonResult
+    equals(value: T): boolean
 }
 
-export const Signum = {
-    Negative: -1,
-    Greater: 1,
-    Same: 0,
-    Positive: 1,
-    Less: -1,
-} as const
+export type Signum = -1 | 0 | 1
 
-export type Signum = typeof Signum[keyof typeof Signum]
-
+export interface NumericSigned {
+    readonly sign: Signum
+}
 export interface NumericComparable<T> {
-    compare(value: T): Signum
+    compareTo(value: T): Signum
 }
 
 export interface BitOperable<T> {

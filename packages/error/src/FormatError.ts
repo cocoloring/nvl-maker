@@ -1,6 +1,6 @@
-import type { BasicObject } from './BasicType'
+import type { BasicObject } from '@nvl-maker/types'
 
-enum ErrorText {
+export enum ErrorText {
     BadString = 'string cannot be parsed',
     BadCanvasContext2D = 'unable to get context 2d from a html canvas element',
     NoConstructor = "it's not allowed to create a instances of this class via constructor.",
@@ -10,9 +10,7 @@ enum ErrorText {
     InvalidIndexRange = 'Invalid index range of list-like object',
 }
 
-export default class FormatError
-    extends Error
-    implements BasicObject<FormatError> {
+export class FormatError extends Error implements BasicObject<FormatError> {
     static ErrorText: typeof ErrorText = ErrorText
     readonly type: keyof typeof ErrorText
     readonly message: ErrorText

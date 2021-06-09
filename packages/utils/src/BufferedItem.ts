@@ -1,4 +1,4 @@
-import FormatError from './FormatError'
+import { FormatError } from '@nvl-maker/error'
 
 export type BufferedItemInitFn<T> = (name: string) => T
 export type BufferedItemUpdateFn<T> = (name: string, prevValue: T) => T

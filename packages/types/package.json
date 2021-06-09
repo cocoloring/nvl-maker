@@ -1,7 +1,7 @@
 {
-    "name": "@nvl-maker/utils",
+    "name": "@nvl-maker/types",
     "version": "0.0.1",
-    "description": "Common utility libraries.",
+    "description": "Pure type definition of basic types",
     "repository": "git@github.com:cocoloring/nvl-maker.git",
     "keywords": [
         "typescript"
@@ -15,12 +15,5 @@
         "build:ts": "yarn tsc -p ./tsconfig.json",
         "clean": "yarn clean:ts",
         "clean:ts": "yarn rimraf node_modules"
-    },
-    "dependencies": {
-        "@nvl-maker/error": "^0.0.1"
-    },
-    "devDependencies": {
-        "@types/node": "^15.12.0",
-        "@nvl-maker/types": "^0.0.1"
     }
 }

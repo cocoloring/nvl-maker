@@ -1,4 +1,4 @@
-import type { BasicObject } from './BasicType'
+import type { BasicObject } from '@nvl-maker/types'
 
 export type MomentEnv = 'node' | 'node-legacy' | 'browser' | 'browser-legacy'
 

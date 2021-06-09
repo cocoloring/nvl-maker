@@ -1,7 +1,7 @@
 {
-    "name": "@nvl-maker/utils",
+    "name": "@nvl-maker/data-type",
     "version": "0.0.1",
-    "description": "Common utility libraries.",
+    "description": "basic types",
     "repository": "git@github.com:cocoloring/nvl-maker.git",
     "keywords": [
         "typescript"
@@ -17,10 +17,11 @@
         "clean:ts": "yarn rimraf node_modules"
     },
     "dependencies": {
-        "@nvl-maker/error": "^0.0.1"
+        "@nvl-maker/error": "^0.0.1",
+        "@nvl-maker/utils": "^0.0.1",
+        "canvas": "^2.7.0"
     },
     "devDependencies": {
-        "@types/node": "^15.12.0",
         "@nvl-maker/types": "^0.0.1"
     }
 }

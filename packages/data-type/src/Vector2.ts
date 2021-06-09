@@ -1,4 +1,4 @@
-import type { BasicObject } from './BasicType'
+import type { BasicObject } from '@nvl-maker/types'
 
 export type Vector2Array = [number, number]
 

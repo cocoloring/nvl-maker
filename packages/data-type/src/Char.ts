@@ -1,11 +1,14 @@
-import type { BasicObject } from './BasicType'
-import BufferedItem from './BufferedItem'
+import Utils from '@nvl-maker/utils'
+import { FormatError } from '@nvl-maker/error'
+import type { BasicObject } from '@nvl-maker/types'
+
 import Float from './Float'
-import FormatError from './FormatError'
 import Vector2 from './Vector2'
 import Integer from './Integer'
 
 import { createCanvas } from 'canvas'
+
+const { BufferedItem } = Utils
 
 const bufferName = {
     canvas: 'char_canvas_for_char_measure',
@@ -49,22 +52,11 @@ export default class Char extends Integer implements BasicObject<Char> {
         return new Float(this.value)
     }
 
-    protected splitNumberAsArray(valueTotal: number, valueMax = 10): number[] {
-        // TODO: as a methods of Integer
-        const values: number[] = []
-        let valueRemain = valueTotal
-        while (valueRemain > 0) {
-            values.unshift(valueRemain % valueMax)
-            valueRemain = Math.floor(valueRemain / valueMax)
-        }
-        return values
-    }
-
     protected bufferString = ''
 
     protected calcString(): void {
         this.bufferString = String.fromCharCode(
-            ...this.splitNumberAsArray(this.value, 0x10000),
+            ...new Integer(this.value).split().map((i) => i.valueOf()),
         )
     }
 

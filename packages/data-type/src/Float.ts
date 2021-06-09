@@ -1,6 +1,5 @@
-import type { AdditionalNumericArithmetic } from './BasicArithmetic'
-import type { BasicObject } from './BasicType'
-import FormatError from './FormatError'
+import { FormatError } from '@nvl-maker/error'
+import type { BasicObject, AdditionalNumericArithmetic } from '@nvl-maker/types'
 
 export default class Float
     implements BasicObject<Float>, AdditionalNumericArithmetic<Float> {

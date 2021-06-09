@@ -1,6 +1,7 @@
-import type { ElementaryArithmetic } from './BasicArithmetic'
-import type { BasicObject } from './BasicType'
-import FormatError from './FormatError'
+import { FormatError } from '@nvl-maker/error'
+import type { ElementaryArithmetic, BasicObject } from '@nvl-maker/types'
+
+import List from './List'
 
 export default class Integer
     implements BasicObject<Integer>, ElementaryArithmetic<Integer> {
@@ -66,5 +67,20 @@ export default class Integer
 
     clone(): Integer {
         return new Integer(this.value)
+    }
+
+    split(radix: Integer | number = 10): List<Integer> {
+        if (typeof radix === 'number') {
+            radix = new Integer(radix)
+        }
+        const valueTotal = this.data
+        const valueMax = radix.data
+        const values = new List<Integer>()
+        let valueRemain = valueTotal
+        while (valueRemain > 0) {
+            values.add(new Integer(valueRemain % valueMax), 0)
+            valueRemain = Math.floor(valueRemain / valueMax)
+        }
+        return values
     }
 }

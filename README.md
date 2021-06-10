@@ -29,3 +29,7 @@ current, Non. ヽ(・∀・)ﾉ
 Just submit requests and issues on GitHub.
 
 ~~We are too lazy to read our mailbox~~ (ↀДↀ)⁼³₌₃
+
+## Collaborators
+
+We called us Color-Sprayer, ~~but It doesn't really mean anything~~. you can check out members [here](./Collaborators.md).

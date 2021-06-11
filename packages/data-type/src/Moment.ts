@@ -29,7 +29,7 @@ if (typeof process === 'object' && process?.hrtime?.bigint) {
     }
 }
 
-export default class Moment implements BasicObject<Moment> {
+export class Moment implements BasicObject<Moment> {
     static readonly Env: MomentEnv = currentEnv
 
     static now: () => bigint = now

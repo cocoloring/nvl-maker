@@ -1,6 +1,6 @@
 import type { BasicObject } from '@nvl-maker/types'
 
-export default class List<T> implements BasicObject<List<T>>, Iterable<T> {
+export class List<T> implements BasicObject<List<T>>, Iterable<T> {
     static fromIterable<T>(iter: Iterable<T>): List<T> {
         const list = new List<T>()
         list.data = [...iter]

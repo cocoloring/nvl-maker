@@ -1,5 +1,5 @@
-import Utils from '@nvl-maker/utils'
+import * as utils from '@nvl-maker/utils'
 
 export default class NVLMaker {
-    static Utils = Utils
+    static Utils = utils
 }

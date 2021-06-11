@@ -12,7 +12,7 @@ export type ObjectBasedMap<T> = {
     [name: string]: T
 }
 
-export default class BufferedItem<T = unknown> {
+export class BufferedItem<T = unknown> {
     protected static data: ObjectBasedMap<
         BufferedItem<unknown>
     > = Object.create(null)

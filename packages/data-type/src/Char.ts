@@ -1,14 +1,12 @@
-import Utils from '@nvl-maker/utils'
+import { BufferedItem } from '@nvl-maker/utils'
 import { FormatError } from '@nvl-maker/error'
 import type { BasicObject } from '@nvl-maker/types'
 
-import Float from './Float'
-import Vector2 from './Vector2'
-import Integer from './Integer'
+import { Float } from './Float'
+import { Vector2 } from './Vector2'
+import { Integer } from './Integer'
 
 import { createCanvas } from 'canvas'
-
-const { BufferedItem } = Utils
 
 const bufferName = {
     canvas: 'char_canvas_for_char_measure',
@@ -24,7 +22,7 @@ BufferedItem.set(bufferName.canvas, () => {
     return canvas as HTMLCanvasElement
 })
 
-export default class Char extends Integer implements BasicObject<Char> {
+export class Char extends Integer implements BasicObject<Char> {
     constructor(initCharCode = 0x20) {
         super()
         this.data = this.formatData(initCharCode)

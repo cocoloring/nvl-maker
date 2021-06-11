@@ -2,7 +2,7 @@ import type { BasicObject } from '@nvl-maker/types'
 
 export type Vector2Array = [number, number]
 
-export default class Vector2 implements BasicObject<Vector2> {
+export class Vector2 implements BasicObject<Vector2> {
     protected data: Vector2Array
 
     constructor(...condition: [number?, number?]) {

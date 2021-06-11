@@ -1,7 +1,7 @@
 import { FormatError } from '@nvl-maker/error'
 import type { BasicObject } from '@nvl-maker/types'
 
-export default class Tuple<T> implements BasicObject<Tuple<T>>, Iterable<T> {
+export class Tuple<T> implements BasicObject<Tuple<T>>, Iterable<T> {
     static fromIterable<T>(iter: Iterable<T>): Tuple<T> {
         const tuple = new Tuple<T>(...iter)
         return tuple

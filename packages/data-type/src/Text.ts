@@ -1,11 +1,9 @@
 import type { BasicObject } from '@nvl-maker/types'
 
-import Char from './Char'
-import List from './List'
+import { Char } from './Char'
+import { List } from './List'
 
-export default class Text
-    extends List<Char>
-    implements BasicObject<List<Char>> {
+export class Text extends List<Char> implements BasicObject<List<Char>> {
     constructor(str: string) {
         super()
         this.data = str.split('').map((v) => new Char(v.charCodeAt(0)))

@@ -1,9 +1,9 @@
 import { FormatError } from '@nvl-maker/error'
 import type { ElementaryArithmetic, BasicObject } from '@nvl-maker/types'
 
-import List from './List'
+import { List } from './List'
 
-export default class Integer
+export class Integer
     implements BasicObject<Integer>, ElementaryArithmetic<Integer> {
     static fromNumber(n: number): Integer {
         return new Integer(+n)

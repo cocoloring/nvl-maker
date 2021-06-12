@@ -14,9 +14,9 @@ export interface BitAndOperable<T> {
     and(value: T): this
 }
 
-export interface BitShiftOperable {
-    leftShift(arithmetic?: boolean): this
-    rightShift(arithmetic?: boolean): this
+export interface BitShiftOperable<T> {
+    leftShift(value?: T, arithmetic?: boolean): this
+    rightShift(value?: T, arithmetic?: boolean): this
 }
 
 export interface BitOperable<T>
@@ -24,4 +24,4 @@ export interface BitOperable<T>
         BitOrOperable<T>,
         BitXorOperable<T>,
         BitAndOperable<T>,
-        BitShiftOperable {}
+        BitShiftOperable<T> {}

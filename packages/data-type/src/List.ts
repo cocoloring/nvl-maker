@@ -1,6 +1,7 @@
-import type { BasicObject } from '@nvl-maker/types'
+import type { BasicObject, ListOperable } from '@nvl-maker/types'
 
-export class List<T> implements BasicObject<List<T>>, Iterable<T> {
+export class List<T>
+    implements BasicObject<List<T>>, Iterable<T>, ListOperable<T> {
     static fromIterable<T>(iter: Iterable<T>): List<T> {
         const list = new List<T>()
         list.data = [...iter]
@@ -24,6 +25,10 @@ export class List<T> implements BasicObject<List<T>>, Iterable<T> {
     set(position: number, value: T): this {
         this.data[position] = value
         return this
+    }
+
+    positionOf(value: T): number {
+        return this.data.indexOf(value)
     }
 
     add(item: T, position: number = this.data.length - 1): this {
@@ -62,6 +67,30 @@ export class List<T> implements BasicObject<List<T>>, Iterable<T> {
         return this
     }
 
+    pop(position: number = this.data.length - 1): T | void {
+        const lastPosition = this.data.length - 1
+        if (position === 0) {
+            return this.data.shift()
+        } else if (position === lastPosition) {
+            return this.data.pop()
+        } else {
+            return this.data.splice(position, 1)[0]
+        }
+    }
+
+    popMany(howMany: number, position: number = this.data.length - 1): List<T> {
+        const removedItems = List.fromIterable(
+            this.data.splice(position, howMany),
+        )
+        return removedItems
+    }
+
+    shift(value?: number): this {
+        // TODO: need implements
+        value
+        return this
+    }
+
     [Symbol.iterator](): Iterator<T> {
         return this.data[Symbol.iterator]()
     }
@@ -76,6 +105,25 @@ export class List<T> implements BasicObject<List<T>>, Iterable<T> {
 
     valueOf(): number {
         return this.data.length
+    }
+
+    shuffle(randomGenerator: Generator<number>): this {
+        // TODO: need a global default random Generator
+        const data = this.data
+        let i = data.length
+
+        while (0 < i) {
+            const rnd = randomGenerator.next().value
+            const j = Math.floor(rnd * i)
+            i--
+            // swap
+            const tmp = data[j]
+            data[j] = data[i]
+            data[i] = tmp
+        }
+
+        this.data = data
+        return this
     }
 
     map<R>(mappingFn: (item: T, index: number, list: this) => R): List<R> {

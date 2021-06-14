@@ -14,10 +14,12 @@ export interface ListOperable<T> {
     remove(position: Index): this
     removeMany(howMany: number, position?: Index): this
 
-    leftShift(value?: number): this
-    rightShift(value?: number): this
+    pop(position: Index): T | void
+    popMany(howMany: number, position?: Index): ListOperable<T>
 
-    shuffle(randomGenerator: Iterable<number>): this
+    shift(value?: number): this
+
+    shuffle(randomGenerator: Generator<number>): this
 
     map<R>(
         mappingFn: (item: T, index: number, list: this) => R,

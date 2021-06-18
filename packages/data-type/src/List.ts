@@ -85,9 +85,12 @@ export class List<T>
         return removedItems
     }
 
-    shift(value?: number): this {
-        // TODO: need implements
-        value
+    shift(value = 1): this {
+        let start = -value % this.data.length
+        if (start === 0) return this
+        if (start > 0) start -= 1
+        const removed = this.data.splice(start)
+        this.data = removed.concat(this.data)
         return this
     }
 

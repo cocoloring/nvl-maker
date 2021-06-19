@@ -144,4 +144,13 @@ export class List<T>
 
         return newList
     }
+
+    each(loopFn: (item: T, index: number, list: this) => void): this {
+        for (let i = 0; i < this.length; i++) {
+            const item = this.get(i)
+            if (item === undefined) continue
+            loopFn(item, i, this)
+        }
+        return this
+    }
 }

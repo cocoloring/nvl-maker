@@ -25,4 +25,5 @@ export interface ListOperable<T> {
     map<R>(
         mappingFn: (item: T, index: number, list: this) => R,
     ): ListOperable<R>
+    each(loopFn: (item: T, index: number, list: this) => void): this
 }

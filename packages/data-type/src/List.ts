@@ -172,4 +172,32 @@ export class List<T>
         }
         return res
     }
+
+    some(testFn: (item: T, index: number, listSelf: this) => boolean): boolean {
+        const data = this.data
+        const length = data.length
+        for (let index = 0; index < length; index++) {
+            const item = data[index]
+            const testPassed = testFn(item, index, this)
+            if (testPassed) {
+                return true
+            }
+        }
+        return false
+    }
+
+    every(
+        testFn: (item: T, index: number, listSelf: this) => boolean,
+    ): boolean {
+        const data = this.data
+        const length = data.length
+        for (let index = 0; index < length; index++) {
+            const item = data[index]
+            const testPassed = testFn(item, index, this)
+            if (!testPassed) {
+                return false
+            }
+        }
+        return true
+    }
 }

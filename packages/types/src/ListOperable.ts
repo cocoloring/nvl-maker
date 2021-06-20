@@ -36,4 +36,7 @@ export interface ListOperable<T> {
             listSelf: this,
         ) => R,
     ): R
+
+    some(testFn: (item: T, index: number, listSelf: this) => boolean): boolean
+    every(testFn: (item: T, index: number, listSelf: this) => boolean): boolean
 }

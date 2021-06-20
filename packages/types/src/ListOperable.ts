@@ -26,4 +26,14 @@ export interface ListOperable<T> {
         mappingFn: (item: T, index: number, list: this) => R,
     ): ListOperable<R>
     each(loopFn: (item: T, index: number, list: this) => void): this
+
+    reduce<R>(
+        initValue: R,
+        reducer: (
+            lastResult: R,
+            currentItem: T,
+            currentIndex: number,
+            listSelf: this,
+        ) => R,
+    ): R
 }

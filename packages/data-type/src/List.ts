@@ -153,4 +153,23 @@ export class List<T>
         }
         return this
     }
+
+    reduce<R>(
+        initValue: R,
+        reducer: (
+            lastResult: R,
+            currentItem: T,
+            currentIndex: number,
+            listSelf: this,
+        ) => R,
+    ): R {
+        let res: R = initValue
+        const data = this.data
+        const len = data.length
+        for (let idx = 0; idx < len; idx++) {
+            const item = data[idx]
+            res = reducer(res, item, idx, this)
+        }
+        return res
+    }
 }

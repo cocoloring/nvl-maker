@@ -31,8 +31,8 @@ export class List<T>
         return this.data.indexOf(value)
     }
 
-    add(item: T, position: number = this.data.length - 1): this {
-        const lastPosition = this.data.length - 1
+    add(item: T, position: number = this.data.length): this {
+        const lastPosition = this.data.length
 
         if (position === 0) {
             this.data.unshift(item)
@@ -44,12 +44,13 @@ export class List<T>
         return this
     }
 
-    addMany(items: Array<T>, position: number = this.data.length - 1): this {
+    addMany(items: Array<T>, position: number = this.data.length): this {
         this.data.splice(position, 0, ...items)
         return this
     }
 
     remove(position: number = this.data.length - 1): this {
+        // TODO: this is some issues with position
         const lastPosition = this.data.length - 1
 
         if (position === 0) {
@@ -63,6 +64,7 @@ export class List<T>
     }
 
     removeMany(howMany: number, position: number = this.data.length - 1): this {
+        // TODO: this is some issues with position
         this.data.splice(position, howMany)
         return this
     }

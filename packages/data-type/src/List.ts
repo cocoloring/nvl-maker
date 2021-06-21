@@ -200,4 +200,29 @@ export class List<T>
         }
         return true
     }
+
+    splitEvery(howMany: number): List<List<T>> {
+        const data = this.data
+        const length = data.length
+
+        if (length % howMany !== 0) {
+            // TODO: should use FormatError
+            throw new Error('cannot split perfectly!')
+        }
+
+        const res = new List<List<T>>()
+
+        let subList: List<T> = new List<T>()
+        res.add(subList) // add first
+
+        for (let index = 0; index < length; index++) {
+            if (index !== 0 && index % howMany === 0) {
+                subList = new List<T>()
+                res.add(subList)
+            }
+            subList.add(data[index])
+        }
+
+        return res
+    }
 }

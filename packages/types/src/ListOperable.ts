@@ -39,4 +39,6 @@ export interface ListOperable<T> {
 
     some(testFn: (item: T, index: number, listSelf: this) => boolean): boolean
     every(testFn: (item: T, index: number, listSelf: this) => boolean): boolean
+
+    splitEvery(howMany: number): ListOperable<ListOperable<T>>
 }

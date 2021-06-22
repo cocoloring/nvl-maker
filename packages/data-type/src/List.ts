@@ -128,6 +128,11 @@ export class List<T>
         return this
     }
 
+    reverse(): this {
+        this.data = this.data.reverse()
+        return this
+    }
+
     map<R>(mappingFn: (item: T, index: number, list: this) => R): List<R> {
         const newList = new List<R>()
 

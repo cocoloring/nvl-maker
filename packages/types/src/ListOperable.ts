@@ -20,6 +20,7 @@ export interface ListOperable<T> {
     shift(value?: number): this
 
     shuffle(randomGenerator: Generator<number>): this
+    reverse(): this
 
     map<R>(
         mappingFn: (item: T, index: number, list: this) => R,

@@ -86,10 +86,9 @@ export class List<T>
     }
 
     shift(value = 1): this {
-        let start = -value % this.data.length
-        if (start === 0) return this
-        if (start > 0) start -= 1
-        const removed = this.data.splice(start)
+        if (value === 0) return this
+        const index = -value % this.data.length
+        const removed = this.data.splice(index)
         this.data = removed.concat(this.data)
         return this
     }

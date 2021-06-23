@@ -18,12 +18,18 @@ export class List<T>
         return this.data.length
     }
 
+    normalizePosition(position: number): number {
+        position = position % this.data.length
+        if (position < 0) position = position + this.data.length
+        return position
+    }
+
     get(position: number): T | undefined {
-        return this.data[position]
+        return this.data[this.normalizePosition(position)]
     }
 
     set(position: number, value: T): this {
-        this.data[position] = value
+        this.data[this.normalizePosition(position)] = value
         return this
     }
 

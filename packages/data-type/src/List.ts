@@ -1,5 +1,17 @@
 import type { BasicObject, ListOperable } from '@nvl-maker/types'
 
+function mod(value: number, max: number): number {
+    if (value < 0) {
+        value = value - 1
+        value = value % max
+        value = value + max + 1
+        value = value % max
+    } else {
+        value = value % max
+    }
+    return value
+}
+
 export class List<T>
     implements BasicObject<List<T>>, Iterable<T>, ListOperable<T> {
     static fromIterable<T>(iter: Iterable<T>): List<T> {
@@ -18,18 +30,12 @@ export class List<T>
         return this.data.length
     }
 
-    normalizePosition(position: number): number {
-        position = position % this.data.length
-        if (position < 0) position = position + this.data.length
-        return position
-    }
-
     get(position: number): T | undefined {
-        return this.data[this.normalizePosition(position)]
+        return this.data[mod(position, this.data.length)]
     }
 
     set(position: number, value: T): this {
-        this.data[this.normalizePosition(position)] = value
+        this.data[mod(position, this.data.length)] = value
         return this
     }
 

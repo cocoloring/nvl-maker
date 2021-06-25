@@ -1,8 +1,6 @@
 module.exports = {
     root: true,
-    ignorePatterns: ['**/node_modules', '**/build'],
-    plugins: ['prettier', '@typescript-eslint'],
-    parser: '@typescript-eslint/parser',
+    ignorePatterns: ['**/node_modules', '**/build', '**/dist'],
     parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
@@ -15,12 +13,19 @@ module.exports = {
             version: 'detect',
         },
     },
-    ignorePatterns: ['**/node_modules', '**/build'],
-    extends: [
-        'plugin:prettier/recommended',
-        'plugin:@typescript-eslint/recommended',
+    extends: ['plugin:prettier/recommended'],
+    overrides: [
+        {
+            files: ['*.ts', '*.tsx'],
+            plugins: ['prettier', '@typescript-eslint'],
+            parser: '@typescript-eslint/parser',
+            extends: [
+                'plugin:prettier/recommended',
+                'plugin:@typescript-eslint/recommended',
+            ],
+            rules: {
+                '@typescript-eslint/explicit-function-return-type': ['error'],
+            },
+        },
     ],
-    rules: {
-        '@typescript-eslint/explicit-function-return-type': ['error'],
-    },
 }

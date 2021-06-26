@@ -17,7 +17,8 @@
         "noFallthroughCasesInSwitch": true,
         "moduleResolution": "node",
         "esModuleInterop": false,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "skipLibCheck": true
     },
     "exclude": [
         ".yarn/releases/*",

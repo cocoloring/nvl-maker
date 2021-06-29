@@ -81,11 +81,8 @@ export class Char extends Integer implements BasicObject<Char> {
         const context2D = canvas.getContext('2d')
         if (context2D === null) throw new FormatError('BadCanvasContext2D')
         context2D.font = this.fontName
-        const {
-            width,
-            actualBoundingBoxAscent,
-            actualBoundingBoxDescent,
-        } = context2D.measureText(this.toString())
+        const { width, actualBoundingBoxAscent, actualBoundingBoxDescent } =
+            context2D.measureText(this.toString())
         console.log(context2D.measureText(this.toString()))
         this.bufferedDisplaySize.value = [
             width,

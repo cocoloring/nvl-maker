@@ -4,7 +4,8 @@ import type { ElementaryArithmetic, BasicObject } from '@nvl-maker/types'
 import { List } from './List'
 
 export class Integer
-    implements BasicObject<Integer>, ElementaryArithmetic<Integer> {
+    implements BasicObject<Integer>, ElementaryArithmetic<Integer>
+{
     static fromNumber(n: number): Integer {
         return new Integer(+n)
     }

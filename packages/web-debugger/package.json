@@ -1,0 +1,37 @@
+{
+    "name": "@nvl-maker/web-debugger",
+    "version": "0.0.1",
+    "description": "Debugger for web.",
+    "repository": "git@github.com:cocoloring/nvl-maker.git",
+    "keywords": [
+        "typescript",
+        "react",
+        "webpack"
+    ],
+    "author": "cocoloring <cocoloring@outlook.com>",
+    "license": "MIT",
+    "main": "build/main.js",
+    "types": "build/main.d.ts",
+    "scripts": {
+        "build": "yarn build:webpack",
+        "build:webpack": "webpack --config webpack.config.js",
+        "dev": "webpack serve --open --config webpack.dev.config.js",
+        "clean": "yarn clean:ts",
+        "clean:ts": "yarn rimraf node_modules"
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.14",
+        "@types/react-dom": "^17.0.9",
+        "@types/webpack": "^5.28.0",
+        "html-webpack-plugin": "^5.3.2",
+        "ts-loader": "^9.2.3",
+        "typescript": "^4.3.5",
+        "webpack": "^5.45.1",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
+    }
+}

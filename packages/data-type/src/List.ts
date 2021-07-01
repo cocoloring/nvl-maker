@@ -1,4 +1,4 @@
-import type { BasicObject, ListOperable } from '@nvl-maker/types'
+import type { BasicObject, ListOperable } from './types/main'
 
 function mod(value: number, max: number): number {
     if (value < 0) {

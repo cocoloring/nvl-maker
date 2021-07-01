@@ -1,4 +1,4 @@
-import type { BasicObject } from '@nvl-maker/types'
+import type { BasicObject } from './types/main'
 
 import { Char } from './Char'
 import { List } from './List'

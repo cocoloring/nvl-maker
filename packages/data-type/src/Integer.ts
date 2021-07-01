@@ -1,5 +1,5 @@
 import { FormatError } from '@nvl-maker/error'
-import type { ElementaryArithmetic, BasicObject } from '@nvl-maker/types'
+import type { ElementaryArithmetic, BasicObject } from './types/main'
 
 import { List } from './List'
 

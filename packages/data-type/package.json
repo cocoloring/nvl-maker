@@ -21,7 +21,5 @@
         "@nvl-maker/utils": "^0.0.1",
         "canvas": "^2.7.0"
     },
-    "devDependencies": {
-        "@nvl-maker/types": "^0.0.1"
-    }
+    "devDependencies": {}
 }

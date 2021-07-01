@@ -1,3 +1,5 @@
+export * from './types/main'
+
 export * from './Char'
 export * from './Float'
 export * from './Integer'

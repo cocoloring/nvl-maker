@@ -1,6 +1,6 @@
 import { BufferedItem } from '@nvl-maker/utils'
 import { FormatError } from '@nvl-maker/error'
-import type { BasicObject } from '@nvl-maker/types'
+import type { BasicObject } from './types/main'
 
 import { Float } from './Float'
 import { Vector2 } from './Vector2'

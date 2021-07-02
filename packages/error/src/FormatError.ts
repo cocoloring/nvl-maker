@@ -1,5 +1,3 @@
-import type { BasicObject } from '@nvl-maker/types'
-
 export enum ErrorText {
     BadString = 'string cannot be parsed',
     BadCanvasContext2D = 'unable to get context 2d from a html canvas element',
@@ -10,7 +8,7 @@ export enum ErrorText {
     InvalidIndexRange = 'Invalid index range of list-like object',
 }
 
-export class FormatError extends Error implements BasicObject<FormatError> {
+export class FormatError extends Error {
     static ErrorText: typeof ErrorText = ErrorText
     readonly type: keyof typeof ErrorText
     readonly message: ErrorText

@@ -20,7 +20,6 @@
         "@nvl-maker/error": "^0.0.1"
     },
     "devDependencies": {
-        "@types/node": "^15.12.0",
-        "@nvl-maker/types": "^0.0.1"
+        "@types/node": "^15.12.0"
     }
 }

@@ -7,9 +7,6 @@
     "references": [
         {
             "path": "../error"
-        },
-        {
-            "path": "../types"
         }
     ]
 }

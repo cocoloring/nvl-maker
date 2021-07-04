@@ -4,9 +4,6 @@
         "rootDir": "src",
         "outDir": "build/"
     },
-    "references": [
-        {
-            "path": "../types"
-        }
-    ]
+    "include": ["src/**/*.ts"],
+    "references": []
 }

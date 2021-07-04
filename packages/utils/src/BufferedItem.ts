@@ -13,9 +13,8 @@ export type ObjectBasedMap<T> = {
 }
 
 export class BufferedItem<T = unknown> {
-    protected static data: ObjectBasedMap<
-        BufferedItem<unknown>
-    > = Object.create(null)
+    protected static data: ObjectBasedMap<BufferedItem<unknown>> =
+        Object.create(null)
 
     static set<T>(
         name: string,

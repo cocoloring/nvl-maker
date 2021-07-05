@@ -13,8 +13,7 @@ function mod(value: number, max: number): number {
 }
 
 export class List<T>
-    implements BasicObject<List<T>>, Iterable<T>, ListOperable<T>
-{
+    implements BasicObject<List<T>>, Iterable<T>, ListOperable<T> {
     static fromIterable<T>(iter: Iterable<T>): List<T> {
         const list = new List<T>()
         list.data = [...iter]

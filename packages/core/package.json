@@ -20,12 +20,16 @@
     "main": "build/main.js",
     "types": "build/main.d.ts",
     "scripts": {
-        "build": "yarn npm-run-all build:ts",
+        "build": "yarn run-s build:*",
         "build:ts": "yarn tsc -p ./tsconfig.json",
-        "clean": "yarn clean:ts",
-        "clean:ts": "yarn rimraf node_modules"
+        "dev": "yarn yarn run-p dev:*",
+        "dev:ts": "yarn tsc -p ./tsconfig.json -w",
+        "clean": "yarn run-p clean:*",
+        "clean:node": "yarn rimraf node_modules",
+        "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"
     },
     "dependencies": {
         "@nvl-maker/utils": "^0.0.1"
-    }
+    },
+    "devDependencies": {}
 }

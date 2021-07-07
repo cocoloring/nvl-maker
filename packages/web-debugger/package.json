@@ -13,11 +13,13 @@
     "main": "build/main.js",
     "types": "build/main.d.ts",
     "scripts": {
-        "build": "yarn build:webpack",
-        "build:webpack": "webpack --config webpack.config.js",
-        "dev": "webpack serve --open --config webpack.dev.config.js",
-        "clean": "yarn clean:ts",
-        "clean:ts": "yarn rimraf node_modules"
+        "build": "yarn run-s build:*",
+        "build:webpack": "yarn webpack --config webpack.config.js",
+        "dev": "yarn yarn run-p dev:*",
+        "dev:pack": "yarn webpack serve --open --config webpack.dev.config.js",
+        "clean": "yarn run-p clean:*",
+        "clean:node": "yarn rimraf node_modules",
+        "clean:build": "yarn rimraf build"
     },
     "dependencies": {
         "react": "^17.0.2",

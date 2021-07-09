@@ -21,8 +21,7 @@
     },
     "dependencies": {
         "@nvl-maker/error": "^0.0.1",
-        "@nvl-maker/utils": "^0.0.1",
-        "canvas": "^2.7.0"
+        "@nvl-maker/utils": "^0.0.1"
     },
     "devDependencies": {}
 }

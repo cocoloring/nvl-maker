@@ -2,6 +2,7 @@ import { FormatError } from '@nvl-maker/error'
 import type { ElementaryArithmetic, BasicObject } from './types/main'
 
 import { List } from './List'
+import { Float } from './Float'
 
 export class Integer
     implements BasicObject<Integer>, ElementaryArithmetic<Integer> {
@@ -82,5 +83,9 @@ export class Integer
             valueRemain = Math.floor(valueRemain / valueMax)
         }
         return values
+    }
+
+    toFloat(): Float {
+        return new Float(this.value)
     }
 }

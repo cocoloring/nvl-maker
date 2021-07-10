@@ -30,7 +30,7 @@ export class Integer
     }
 
     set value(value: number) {
-        this.data = value
+        this.data = value | 0
     }
 
     plus(n: Integer): this {

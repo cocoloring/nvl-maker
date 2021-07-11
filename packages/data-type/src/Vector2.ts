@@ -2,6 +2,7 @@ import type { BasicObject } from './types/main'
 
 export type Vector2Array = [number, number]
 
+// TODO: Should be a subtype of Tuple
 export class Vector2 implements BasicObject<Vector2> {
     protected data: Vector2Array
 

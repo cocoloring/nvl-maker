@@ -6,11 +6,10 @@ import { List } from './List'
 export class Text extends List<Char> implements BasicObject<List<Char>> {
     constructor(str: string) {
         super()
-        this.data = str.split('').map((v) => new Char(v.charCodeAt(0)))
-    }
-
-    get value(): Char[] {
-        return this.data
+        // TODO: it cannot split emoji perfectly, need fix
+        for (const char of str) {
+            this.data.push(Char.fromString(char))
+        }
     }
 
     valueOf(): number {
@@ -18,6 +17,6 @@ export class Text extends List<Char> implements BasicObject<List<Char>> {
     }
 
     toString(): string {
-        return super.toString('')
+        return this.data.map((char) => char.toString()).join()
     }
 }

@@ -1,5 +1,7 @@
 import type { BasicObject } from './types/main'
 
+// TODO: do not use bigint, it's very hart to storage it in binary format
+
 export type MomentEnv = 'node' | 'node-legacy' | 'browser' | 'browser-legacy'
 
 let currentEnv: MomentEnv

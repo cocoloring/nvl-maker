@@ -3,8 +3,8 @@ import type { BasicObject, AdditionalNumericArithmetic } from './types/main'
 
 export class Float
     implements BasicObject<Float>, AdditionalNumericArithmetic<Float> {
-    static E = new Float(Math.E)
-    static Pi = new Float(Math.PI)
+    static readonly E = new Float(Math.E)
+    static readonly Pi = new Float(Math.PI)
 
     static fromNumber(n: number): Float {
         return new Float(+n)

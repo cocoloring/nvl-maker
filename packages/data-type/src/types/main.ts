@@ -1,4 +1,4 @@
 export * from './BasicArithmetic'
-export * from './BasicType'
+export * from './PrimitiveConvertible'
 export * from './BitOperable'
 export * from './ListOperable'

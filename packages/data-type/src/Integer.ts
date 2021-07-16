@@ -5,7 +5,8 @@ import { List } from './List'
 import { Float } from './Float'
 
 export class Integer
-    implements BasicObject<Integer>, ElementaryArithmetic<Integer> {
+    implements BasicObject<Integer>, ElementaryArithmetic<Integer>
+{
     static fromNumber(n: number): Integer {
         return new Integer(+n)
     }

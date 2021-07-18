@@ -1,0 +1,17 @@
+export enum TypeId {
+    Integer = 0x00000000,
+    Byte = 0x00000001,
+    Float = 0x00000002,
+    Switch = 0x00000003,
+    List = 0x00000010,
+    NamedList = 0x00000011,
+    Text = 0x00000020,
+    Tuple = 0x00000030,
+    Moment = 0x00000031,
+    Vector2 = 0x00000100,
+    Vector3 = 0x00000101,
+    Vector4 = 0x00000102,
+    Matrix2 = 0x00000110,
+    Matrix3 = 0x00000111,
+    Reference = 0xffffffff,
+}

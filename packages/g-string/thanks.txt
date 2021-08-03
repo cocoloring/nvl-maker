@@ -1,0 +1,7 @@
+This part of the code was transcribed
+from [Orlin Georgiev]'s repository [grapheme-splitter].
+
+original author:
+    Orlin Georgiev (https://github.com/orling)
+original repository:
+    https://github.com/orling/grapheme-splitter

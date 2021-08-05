@@ -1,0 +1,18 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build/"
+    },
+    "references": [
+        {
+            "path": "../dist-electron-main"
+        },
+        {
+            "path": "../dist-electron-renderer"
+        },
+        {
+            "path": "../dist-electron-preload"
+        }
+    ]
+}

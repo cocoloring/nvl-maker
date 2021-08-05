@@ -1,0 +1,30 @@
+{
+    "name": "@nvl-maker/dist-electron",
+    "version": "0.0.1",
+    "description": "Distribution in Electron.",
+    "repository": "git@github.com:cocoloring/nvl-maker.git",
+    "keywords": [
+        "typescript"
+    ],
+    "author": "cocoloring <cocoloring@outlook.com>",
+    "license": "MIT",
+    "main": "build/main.js",
+    "types": "build/main.d.ts",
+    "scripts": {
+        "build": "yarn run-s build:*",
+        "build:ts": "yarn tsc -p ./tsconfig.json",
+        "dev": "yarn yarn run-p dev:*",
+        "dev:ts": "yarn tsc -p ./tsconfig.json -w",
+        "clean": "yarn run-p clean:*",
+        "clean:node": "yarn rimraf node_modules",
+        "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"
+    },
+    "dependencies": {
+        "@nvl-maker/dist-electron-main": "0.0.1",
+        "@nvl-maker/dist-electron-preload": "0.0.1",
+        "@nvl-maker/dist-electron-renderer": "0.0.1"
+    },
+    "devDependencies": {
+        "electron": "^13.2.2"
+    }
+}

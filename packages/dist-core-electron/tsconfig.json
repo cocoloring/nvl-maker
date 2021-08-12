@@ -6,13 +6,13 @@
     },
     "references": [
         {
-            "path": "../dist-electron-main"
+            "path": "../dist-core-electron-main"
         },
         {
-            "path": "../dist-electron-renderer"
+            "path": "../dist-core-electron-renderer"
         },
         {
-            "path": "../dist-electron-preload"
+            "path": "../dist-core-electron-preload"
         }
     ]
 }

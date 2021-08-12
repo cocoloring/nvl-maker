@@ -1,7 +1,7 @@
 {
-    "name": "@nvl-maker/dist-electron-preload",
+    "name": "@nvl-maker/dist-core-electron",
     "version": "0.0.1",
-    "description": "Preloaded script of electron distribution",
+    "description": "Core electron distribution.",
     "repository": "git@github.com:cocoloring/nvl-maker.git",
     "keywords": [
         "typescript"
@@ -19,7 +19,11 @@
         "clean:node": "yarn rimraf node_modules",
         "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@nvl-maker/dist-core-electron-main": "0.0.1",
+        "@nvl-maker/dist-core-electron-preload": "0.0.1",
+        "@nvl-maker/dist-core-electron-renderer": "0.0.1"
+    },
     "devDependencies": {
         "electron": "^13.2.2"
     }

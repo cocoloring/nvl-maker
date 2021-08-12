@@ -1,8 +1,1 @@
-{
-    "cSpell.words": ["Cloneable", "Galgame", "cocoloring", "preload", "webgl"],
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "code-runner.executorMap": {
-        "typescript": "node --no-warnings --loader ts-node/esm"
-    },
-    "files.exclude": {}
-}
+{"cSpell.words":["Cloneable","Galgame","cocoloring","preload","webgl"],"editor.defaultFormatter":"esbenp.prettier-vscode","code-runner.executorMap":{"typescript":"node --no-warnings --loader ts-node/esm"},"files.exclude":{}}

@@ -1,0 +1,35 @@
+{
+    "name": "@nvl-maker/editor",
+    "version": "0.0.1",
+    "description": "Editor for NVL Maker.",
+    "repository": "git@github.com:cocoloring/nvl-maker.git",
+    "keywords": [
+        "javascript",
+        "typescript",
+        "Visual Novel",
+        "game",
+        "3d",
+        "2d",
+        "webgl",
+        "webgl2",
+        "canvas",
+        "html5"
+    ],
+    "author": "cocoloring <cocoloring@outlook.com>",
+    "license": "MIT",
+    "main": "build/main.js",
+    "types": "build/main.d.ts",
+    "scripts": {
+        "build": "yarn run-s build:*",
+        "build:ts": "yarn tsc -p ./tsconfig.json",
+        "dev": "yarn yarn run-p dev:*",
+        "dev:ts": "yarn tsc -p ./tsconfig.json -w",
+        "clean": "yarn run-p clean:*",
+        "clean:node": "yarn rimraf node_modules",
+        "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"
+    },
+    "dependencies": {
+        "@nvl-maker/core": "^0.0.1"
+    },
+    "devDependencies": {}
+}

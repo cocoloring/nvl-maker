@@ -1,7 +1,7 @@
 {
     "name": "@nvl-maker/dist-core-electron",
     "version": "0.0.1",
-    "description": "Core electron distribution.",
+    "description": "Editor electron distribution.",
     "repository": "git@github.com:cocoloring/nvl-maker.git",
     "keywords": [
         "typescript"

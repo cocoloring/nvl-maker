@@ -1,7 +1,7 @@
 {
     "name": "@nvl-maker/dist-editor-electron-main",
     "version": "0.0.1",
-    "description": "Main process of core electron distribution.",
+    "description": "Main process of editor electron distribution.",
     "repository": "git@github.com:cocoloring/nvl-maker.git",
     "keywords": [
         "typescript"

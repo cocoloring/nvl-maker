@@ -1,5 +1,5 @@
 {
-    "name": "@nvl-maker/dist-core-electron-renderer",
+    "name": "@nvl-maker/dist-editor-electron-renderer",
     "version": "0.0.1",
     "description": "Renderer process of editor electron distribution.",
     "repository": "git@github.com:cocoloring/nvl-maker.git",

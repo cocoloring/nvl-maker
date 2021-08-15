@@ -1,5 +1,5 @@
 {
-    "name": "@nvl-maker/dist-core-electron-preload",
+    "name": "@nvl-maker/dist-editor-electron-preload",
     "version": "0.0.1",
     "description": "Preloaded script of editor electron distribution",
     "repository": "git@github.com:cocoloring/nvl-maker.git",

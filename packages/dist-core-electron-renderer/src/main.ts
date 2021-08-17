@@ -1,4 +1,4 @@
-import { NvlMaker } from '@nvl-maker/core'
+import { Core } from '@nvl-maker/core'
 
-const myGame = new NvlMaker()
+const myGame = new Core()
 myGame.start()

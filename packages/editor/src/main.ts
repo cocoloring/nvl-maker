@@ -1,7 +1,7 @@
-import { NvlMaker as core } from '@nvl-maker/core'
+import { Core } from '@nvl-maker/core'
 
 export class Editor {
-    static core = core
+    static core = Core
 
     start(): this {
         console.log('Editor starting')

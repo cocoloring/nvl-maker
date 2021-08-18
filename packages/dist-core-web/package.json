@@ -1,7 +1,7 @@
 {
-    "name": "@nvl-maker/web-debugger",
+    "name": "@nvl-maker/dist-core-web",
     "version": "0.0.1",
-    "description": "Debugger for web.",
+    "description": "Web distribution for core.",
     "repository": "git@github.com:cocoloring/nvl-maker.git",
     "keywords": [
         "typescript",

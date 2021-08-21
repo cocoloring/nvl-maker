@@ -2,7 +2,8 @@ import { FormatError } from '@nvl-maker/error'
 import type { BasicObject, AdditionalNumericArithmetic } from './types/main'
 
 export class Float
-    implements BasicObject<Float>, AdditionalNumericArithmetic<Float> {
+    implements BasicObject<Float>, AdditionalNumericArithmetic<Float>
+{
     static readonly E = new Float(Math.E)
     static readonly Pi = new Float(Math.PI)
 

@@ -8,7 +8,8 @@ export interface NamedItem<Name, Item> {
 export class NamedList<Name, Item>
     implements
         BasicObject<NamedList<Name, Item>>,
-        Iterable<NamedItem<Name, Item>> {
+        Iterable<NamedItem<Name, Item>>
+{
     protected data = new Map<Name, Item>()
 
     constructor(iter?: Iterable<NamedItem<Name, Item>>) {

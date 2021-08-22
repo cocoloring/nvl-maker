@@ -1,1 +1,1 @@
-import '@nvl-maker/dist-electron-main'
+import '@nvl-maker/dist-core-electron-main'

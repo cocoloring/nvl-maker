@@ -1,1 +1,1 @@
-import '@nvl-maker/dist-electron-renderer'
+import '@nvl-maker/dist-core-electron-renderer'

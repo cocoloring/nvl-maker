@@ -12,11 +12,11 @@ async function createWindow(): Promise<void> {
             nodeIntegration: false,
             contextIsolation: true,
             enableRemoteModule: false,
-            preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(app.getAppPath(), 'preload.js'),
         },
     })
 
-    win.loadFile(path.join(__dirname, 'index.html'))
+    win.loadFile(path.join(app.getAppPath(), 'renderer.html'))
 
     // rest of code..
 }

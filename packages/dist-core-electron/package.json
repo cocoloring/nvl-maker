@@ -11,10 +11,12 @@
     "main": "build/main.js",
     "types": "build/main.d.ts",
     "scripts": {
-        "build": "yarn run-s build:*",
-        "build:ts": "yarn tsc -p ./tsconfig.json",
+        "build": "yarn run-s build:* && yarn create-package-json",
+        "build:webpack": "yarn webpack",
         "dev": "yarn yarn run-p dev:*",
-        "dev:ts": "yarn tsc -p ./tsconfig.json -w",
+        "dev:webpack": "yarn webpack --watch",
+        "dev:electron": "yarn create-package-json && yarn electron build",
+        "create-package-json": "node scripts/create-package-json.js",
         "clean": "yarn run-p clean:*",
         "clean:node": "yarn rimraf node_modules",
         "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"

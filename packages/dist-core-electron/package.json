@@ -11,20 +11,20 @@
     "main": "build/main.js",
     "types": "build/main.d.ts",
     "scripts": {
-        "build": "yarn run-s build:* && yarn create-package-json",
-        "build:webpack": "yarn webpack",
-        "dev": "yarn yarn run-p dev:*",
-        "dev:webpack": "yarn webpack --watch",
-        "dev:electron": "yarn create-package-json && yarn electron build",
+        "build": "run-s build:* && run-s create-package-json",
+        "build:webpack": "webpack",
+        "dev": "run-p dev:*",
+        "dev:webpack": "webpack --watch",
+        "dev:electron": "run-s create-package-json && electron build",
         "create-package-json": "node scripts/create-package-json.js",
-        "clean": "yarn run-p clean:*",
-        "clean:node": "yarn rimraf node_modules",
-        "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"
+        "clean": "run-p clean:*",
+        "clean:node": "rimraf node_modules",
+        "clean:build": "rimraf build tsconfig.tsbuildinfo"
     },
     "dependencies": {
-        "@nvl-maker/dist-core-electron-main": "0.0.1",
-        "@nvl-maker/dist-core-electron-preload": "0.0.1",
-        "@nvl-maker/dist-core-electron-renderer": "0.0.1"
+        "@nvl-maker/dist-core-electron-main": "workspace:0.0.1",
+        "@nvl-maker/dist-core-electron-preload": "workspace:0.0.1",
+        "@nvl-maker/dist-core-electron-renderer": "workspace:0.0.1"
     },
     "devDependencies": {
         "electron": "^13.2.2"

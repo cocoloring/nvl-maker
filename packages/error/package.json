@@ -11,13 +11,13 @@
     "main": "build/main.js",
     "types": "build/main.d.ts",
     "scripts": {
-        "build": "yarn run-s build:*",
-        "build:ts": "yarn tsc -p ./tsconfig.json",
-        "dev": "yarn yarn run-p dev:*",
-        "dev:ts": "yarn tsc -p ./tsconfig.json -w",
-        "clean": "yarn run-p clean:*",
-        "clean:node": "yarn rimraf node_modules",
-        "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"
+        "build": "run-s build:*",
+        "build:ts": "tsc -p ./tsconfig.json",
+        "dev": "run-p dev:*",
+        "dev:ts": "tsc -p ./tsconfig.json -w",
+        "clean": "run-p clean:*",
+        "clean:node": "rimraf node_modules",
+        "clean:build": "rimraf build tsconfig.tsbuildinfo"
     },
     "dependencies": {},
     "devDependencies": {}

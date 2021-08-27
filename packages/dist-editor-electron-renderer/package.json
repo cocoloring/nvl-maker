@@ -20,7 +20,7 @@
         "clean:build": "yarn rimraf build tsconfig.tsbuildinfo"
     },
     "dependencies": {
-        "@nvl-maker/editor": "0.0.1"
+        "@nvl-maker/editor": "workspace:0.0.1"
     },
     "devDependencies": {}
 }

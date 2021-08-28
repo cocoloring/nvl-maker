@@ -6,22 +6,34 @@
     "workspaces": [
         "packages/*"
     ],
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
     "devDependencies": {
+        "@types/react": "^17.0.14",
+        "@types/react-dom": "^17.0.9",
+        "@types/webpack": "^5.28.0",
         "@typescript-eslint/eslint-plugin": "^4.22.1",
         "@typescript-eslint/parser": "^4.22.1",
         "commitizen": "^4.2.3",
         "conventional-changelog": "^3.1.24",
         "conventional-changelog-cli": "^2.1.1",
         "cross-env": "^7.0.3",
+        "cz-conventional-changelog": "^3.3.0",
         "eslint": "^7.26.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^3.4.0",
-        "lerna": "^4.0.0",
+        "html-webpack-plugin": "^5.3.2",
         "npm-run-all": "^4.1.5",
         "prettier": "^2.2.1",
         "rimraf": "^3.0.2",
+        "ts-loader": "^9.2.3",
         "ts-node": "^9.1.1",
-        "typescript": "^4.3.4"
+        "typescript": "^4.3.5",
+        "webpack": "^5.45.1",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
     },
     "config": {
         "commitizen": {
@@ -29,13 +41,12 @@
         }
     },
     "scripts": {
-        "postinstall": "yarn lerna bootstrap --npm-client yarn --use-workspaces && yarn build && yarn lint:fix",
-        "clean": "yarn workspaces run clean && lerna clean -y",
-        "build": "lerna run --stream --sort build",
-        "commit": "yarn commit:pre && git-cz",
-        "pull": "git pull && yarn lint:fix",
+        "clean": "pnpm run -r clean",
+        "build": "pnpm run -r build",
+        "commit": "pnpm run commit:pre && git-cz",
+        "pull": "git pull && pnpm run lint:fix",
         "commit:pre": "yarn lint:fix",
         "lint": "eslint \"**/*.{js,ts,tsx}\"",
-        "lint:fix": "yarn lint --fix"
+        "lint:fix": "pnpm run lint -- --fix"
     }
 }

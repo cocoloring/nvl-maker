@@ -106,6 +106,7 @@ dist
 # lockfiles
 yarn.lock
 package-lock.json
+pnpm-lock.yaml
 
 # build files
 build

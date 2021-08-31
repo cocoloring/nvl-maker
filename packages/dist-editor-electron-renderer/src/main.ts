@@ -1,4 +1,4 @@
-import { Core } from '@nvl-maker/core'
+import { Editor } from '@nvl-maker/editor'
 
-const myGame = new Core()
-myGame.start()
+const editor = new Editor()
+editor.start()

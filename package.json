@@ -6,13 +6,8 @@
     "workspaces": [
         "packages/*"
     ],
-    "dependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2"
-    },
+    "dependencies": {},
     "devDependencies": {
-        "@types/react": "^17.0.14",
-        "@types/react-dom": "^17.0.9",
         "@types/webpack": "^5.28.0",
         "@typescript-eslint/eslint-plugin": "^4.22.1",
         "@typescript-eslint/parser": "^4.22.1",
@@ -47,6 +42,8 @@
         "pull": "git pull && pnpm run lint:fix",
         "commit:pre": "yarn lint:fix",
         "lint": "eslint \"**/*.{js,ts,tsx}\"",
-        "lint:fix": "pnpm run lint -- --fix"
+        "lint:fix": "pnpm run lint -- --fix",
+        "dev:core": "pnpm run dev --filter @nvl-maker/dist-core-electron",
+        "dev:editor": "pnpm run dev --filter @nvl-maker/dist-core-electron"
     }
 }

@@ -1,9 +1,7 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+// import { Core } from '@nvl-maker/core'
 
-import { App } from './App'
-;(function main(): void {
-    const rootElement = document.createElement('div')
-    document.body.appendChild(rootElement)
-    ReactDOM.render(<App />, rootElement)
-})()
+console.log('hey')
+
+//const myGame = new Core()
+//myGame.start()
+export {}

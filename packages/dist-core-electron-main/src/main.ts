@@ -1,7 +1,15 @@
 import { app, BrowserWindow } from 'electron'
+import { URL } from 'url'
 import * as path from 'path'
 
 let win: BrowserWindow
+
+const devPort = 9966
+const devDomain = 'localhost'
+
+const devUrl = new URL(`http://${devDomain}:${devPort}/`)
+
+console.log(devUrl.href)
 
 async function createWindow(): Promise<void> {
     // Create the browser window.
@@ -16,7 +24,13 @@ async function createWindow(): Promise<void> {
         },
     })
 
-    win.loadFile(path.join(app.getAppPath(), 'renderer.html'))
+    console.log(process.env.NODE_ENV)
+
+    if (process.env.NODE_ENV === 'production') {
+        win.loadFile(path.join(app.getAppPath(), 'renderer.html'))
+    } else {
+        win.loadURL(devUrl.href)
+    }
 
     // rest of code..
 }

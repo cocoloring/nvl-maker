@@ -43,7 +43,7 @@
         "commit:pre": "yarn lint:fix",
         "lint": "eslint \"**/*.{js,ts,tsx}\"",
         "lint:fix": "pnpm run lint -- --fix",
-        "dev:core": "pnpm run dev --filter @nvl-maker/dist-core-electron",
-        "dev:editor": "pnpm run dev --filter @nvl-maker/dist-core-electron"
+        "dev:core": "pnpm run -p dev --filter @nvl-maker/dist-core-electron...",
+        "dev:core:web": "pnpm run -p dev --filter @nvl-maker/dist-core-web..."
     }
 }

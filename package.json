@@ -39,7 +39,7 @@
         "clean": "pnpm run -r clean",
         "build": "pnpm run -r build",
         "commit": "pnpm run commit:pre && git-cz",
-        "pull": "git pull && pnpm run lint:fix",
+        "pull": "git pull && pnpm run lint:fix && pnpm install",
         "commit:pre": "pnpm run lint:fix",
         "lint": "eslint \"**/*.{js,ts,tsx}\"",
         "lint:fix": "pnpm run lint -- --fix",

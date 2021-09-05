@@ -40,7 +40,7 @@
         "build": "pnpm run -r build",
         "commit": "pnpm run commit:pre && git-cz",
         "pull": "git pull && pnpm run lint:fix",
-        "commit:pre": "yarn lint:fix",
+        "commit:pre": "pnpm run lint:fix",
         "lint": "eslint \"**/*.{js,ts,tsx}\"",
         "lint:fix": "pnpm run lint -- --fix",
         "dev:core": "pnpm run -p dev --filter @nvl-maker/dist-core-electron...",

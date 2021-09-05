@@ -38,9 +38,9 @@
     "scripts": {
         "clean": "pnpm run -r clean",
         "build": "pnpm run -r build",
-        "commit": "pnpm run commit:pre && git-cz",
+        "commit": "pnpm run lint:fix && git-cz",
         "pull": "git pull && pnpm run lint:fix && pnpm install",
-        "commit:pre": "pnpm run lint:fix",
+        "push": "git push",
         "lint": "eslint \"**/*.{js,ts,tsx}\"",
         "lint:fix": "pnpm run lint -- --fix",
         "dev:core": "pnpm run -p dev --filter @nvl-maker/dist-core-electron...",

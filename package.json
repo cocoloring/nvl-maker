@@ -43,7 +43,7 @@
         "push": "git push",
         "lint": "eslint \"**/*.{js,ts,tsx}\"",
         "lint:fix": "pnpm run lint -- --fix",
-        "dev:core": "pnpm run -p dev --filter @nvl-maker/dist-core-electron...",
-        "dev:core:web": "pnpm run -p dev --filter @nvl-maker/dist-core-web..."
+        "dev:core": "pnpm run --parallel dev --filter @nvl-maker/dist-core-electron...",
+        "dev:core:web": "pnpm run --parallel dev --filter @nvl-maker/dist-core-web..."
     }
 }

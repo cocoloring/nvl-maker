@@ -10,6 +10,7 @@ export interface CoreConfig {
 }
 
 export function CoreContainer(param?: CoreConfig): JSX.Element {
-    param
+    const options: CoreConfig = { ...param } ?? {}
+    options.platform ??= Platform.Web
     return <div>Hello, NVL Maker</div>
 }

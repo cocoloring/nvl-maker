@@ -1,4 +1,7 @@
 {
+    "files.eol": "\n",
+    "prettier.endOfLine": "cr",
+    "prettier.configPath": "prettier.config.js",
     "cSpell.words": [
         "Cloneable",
         "cocoloring",
@@ -11,11 +14,12 @@
         "typescript": "node --no-warnings --loader ts-node/esm"
     },
     "files.exclude": {},
+    "eslint.format.enable": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[typesccript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
+    }
 }

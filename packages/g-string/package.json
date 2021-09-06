@@ -13,7 +13,7 @@
     "scripts": {
         "build": "run-s build:*",
         "build:ts": "tsc -p ./tsconfig.json",
-        "dev": "yarn run-p dev:*",
+        "dev": "run-p dev:*",
         "dev:ts": "tsc -p ./tsconfig.json -w",
         "clean": "run-p clean:*",
         "clean:node": "rimraf node_modules",

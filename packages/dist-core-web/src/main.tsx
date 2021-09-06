@@ -1,7 +1,4 @@
-// import { Core } from '@nvl-maker/core'
+import { Core } from '@nvl-maker/core'
 
-console.log('hey')
-
-//const myGame = new Core()
-//myGame.start()
-export {}
+const myGame = new Core()
+myGame.start()

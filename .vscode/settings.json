@@ -8,6 +8,7 @@
         "Galgame",
         "pnpm",
         "preload",
+        "tsbuildinfo",
         "webgl"
     ],
     "code-runner.executorMap": {

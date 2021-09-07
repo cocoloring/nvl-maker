@@ -4,12 +4,16 @@ import * as path from 'path'
 
 let win: BrowserWindow
 
-const devPort = 9966
+const devMode = process.env.NODE_ENV !== 'production'
+
+const devPort = isNaN(Number(process.env.DEV_PORT))
+    ? 3000
+    : Number(process.env.DEV_PORT)
 const devDomain = 'localhost'
 
-const devUrl = new URL(`http://${devDomain}:${devPort}/`)
+const rendererPageName = 'renderer.html'
 
-console.log(devUrl.href)
+const devUrl = new URL(`http://${devDomain}:${String(devPort)}`)
 
 async function createWindow(): Promise<void> {
     // Create the browser window.
@@ -24,10 +28,8 @@ async function createWindow(): Promise<void> {
         },
     })
 
-    console.log(process.env.NODE_ENV)
-
-    if (process.env.NODE_ENV === 'production') {
-        win.loadFile(path.join(app.getAppPath(), 'renderer.html'))
+    if (!devMode) {
+        win.loadFile(path.join(app.getAppPath(), rendererPageName))
     } else {
         win.loadURL(devUrl.href)
     }

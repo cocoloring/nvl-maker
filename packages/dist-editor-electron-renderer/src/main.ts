@@ -1,4 +1,4 @@
 import { Editor } from '@nvl-maker/editor'
 
-const editor = new Editor()
-editor.start()
+const core = new Editor.core()
+core.start()

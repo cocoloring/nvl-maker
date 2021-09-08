@@ -14,7 +14,15 @@
     "code-runner.executorMap": {
         "typescript": "node --no-warnings --loader ts-node/esm"
     },
-    "files.exclude": {},
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true
+    },
     "eslint.format.enable": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[typesccript]": {

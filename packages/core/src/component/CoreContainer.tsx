@@ -46,3 +46,7 @@ export function CoreContainer(param?: CoreConfig): JSX.Element {
 export interface A {
     a?: { [key: string]: number }
 }
+
+export interface A {
+    a?: { [key: string]: number }
+}

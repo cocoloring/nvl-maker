@@ -42,11 +42,3 @@ export function CoreContainer(param?: CoreConfig): JSX.Element {
         </Canvas>
     )
 }
-
-export interface A {
-    a?: { [key: string]: number }
-}
-
-export interface A {
-    a?: { [key: string]: number }
-}

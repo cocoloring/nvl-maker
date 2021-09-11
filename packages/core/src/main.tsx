@@ -41,10 +41,10 @@ export class Core {
     start(): this {
         console.log('nvl maker is starting')
         if (!this.isMounted()) {
-            const rootEl = document.createElement('div')
-            rootEl.id = Core.defaultRootElementId
-            document.body.appendChild(rootEl)
-            this._dom = rootEl
+            this._dom = document.body
+            this._dom.style.margin = '0'
+            this._dom.style.padding = '0'
+            this._dom.id = Core.defaultRootElementId
         }
         this.render()
         return this

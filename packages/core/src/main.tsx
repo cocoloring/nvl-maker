@@ -3,7 +3,7 @@ import * as utils from '@nvl-maker/utils'
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
 import { CoreContainer } from './component/CoreContainer'
-import type { CoreConfig } from './component/CoreContainer'
+import type { CoreConfig } from './types/CoreConfig'
 
 export class Core {
     static utils = utils

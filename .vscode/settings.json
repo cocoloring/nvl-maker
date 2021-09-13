@@ -9,7 +9,8 @@
         "pnpm",
         "preload",
         "tsbuildinfo",
-        "webgl"
+        "webgl",
+        "threejs"
     ],
     "code-runner.executorMap": {
         "typescript": "node --no-warnings --loader ts-node/esm"

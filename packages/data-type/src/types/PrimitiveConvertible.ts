@@ -16,10 +16,6 @@ export interface Cloneable<T> {
     clone(): T
 }
 
-export interface BinaryConvertible {
-    toBinary(): Int8Array
-}
-
 export interface JavaScriptPrimitiveConvertible {
     valueOf(): Primitive
 }

@@ -6,30 +6,19 @@
         "Cloneable",
         "cocoloring",
         "Galgame",
+        "Handleable",
         "pnpm",
         "preload",
+        "threejs",
         "tsbuildinfo",
-        "webgl",
-        "threejs"
+        "webgl"
     ],
     "code-runner.executorMap": {
         "typescript": "node --no-warnings --loader ts-node/esm"
     },
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/node_modules": true
-    },
+    "files.exclude": {},
     "eslint.format.enable": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[typesccript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    }
+    "[typesccript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+    "[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" }
 }
